@@ -1,11 +1,11 @@
 {
   "name": "software-testing-assignment",
   "version": "1.0.0",
-  "description": "",
+  "description": "COMP.SE.200 Software Testing assignment of Lean Testing group",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no tests are implemented yet \" && exit 1"
+    "test": "mocha src/test"
   },
   "author": "",
   "license": "MIT",
