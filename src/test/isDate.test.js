@@ -4,8 +4,6 @@ import isDate from "../isDate.js"
 const expect = chai.expect
 
 describe("Unit tests of isDate.js", () => {
-    console.log(isDate())
-
     it("DATE001: New Date() object given as parameter", () => {
         expect(isDate(new Date())).to.be.true
     });
