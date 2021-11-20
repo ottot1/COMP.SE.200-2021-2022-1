@@ -10,7 +10,7 @@ function square(n) {
 }
 
 describe("Unit tests of map.js", () => {
-    it("MAP001:	A number array and square function given as parameters", () => {
+    it("MAP001: A number array and square function given as parameters", () => {
         expect(map([4,8], square)).to.deep.equal([16,64])
     });
 
@@ -28,7 +28,7 @@ describe("Unit tests of map.js", () => {
         expect(map([new Date, null, 1011970], isDate)).to.deep.equal([true, false, false])
     });
 
-    it("MAP005:	An array containg numbers and toString method given as parameters", () => {
+    it("MAP005: An array containg numbers and toString method given as parameters", () => {
         expect(map([12, 50, 101], toString)).to.deep.equal(['12', '50', '101'])
     });
 
@@ -55,7 +55,7 @@ describe("Unit tests of map.js", () => {
         expect(function() { map([12, 50, 101], null); }).to.throw(TypeError)
     });
 
-    it("MAP011:	Only one parameter (an array) is given", () => {
+    it("MAP011: Only one parameter (an array) is given", () => {
         expect(function() { map([12, 50, 101]); }).to.throw(TypeError)
     });
 
@@ -69,7 +69,7 @@ describe("Unit tests of map.js", () => {
 
     // Changed second argument from toString to square
     // Reduced length of array to 1 000 000 to speed up test
-    it("MAP014:	A number array with 1000000 values given as the first parameter", () => {
+    it("MAP014: A number array with 1000000 values given as the first parameter", () => {
         let bigArray = new Array(1000000)
         let bigArraySquared = new Array(1000000)
         
@@ -83,15 +83,15 @@ describe("Unit tests of map.js", () => {
     });
 
     // New tests
-    it("MAP015:	Only one parameter (a function) is given", () => {
+    it("MAP015: Only one parameter (a function) is given", () => {
         expect(function() { map(toString); }).to.throw(TypeError)
     });
 
-    it("MAP016:	A Date object and square function given as parameters", () => {
+    it("MAP016: A Date object and square function given as parameters", () => {
         expect(map(new Date, square)).to.deep.equal([undefined])
     });
 
-    it("MAP017:	A third parameter is given", () => {
+    it("MAP017: A third parameter is given", () => {
         expect(map([4,8], square, square)).to.deep.equal([16,64])
     });
 })
