@@ -5,12 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha src/test"
+    "test": "mocha src/test",
+    "coverage": "c8 mocha src/test"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "c8": "^7.10.0",
     "chai": "^4.3.4",
     "mocha": "^9.1.3"
   }
