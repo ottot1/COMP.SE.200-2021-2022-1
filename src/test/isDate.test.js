@@ -20,12 +20,10 @@ describe("Unit tests of isDate.js", () => {
         expect(isDate(new Date ('1991-03-03T01:21:00'))).to.be.true
     });
 
-    // Parameters changed: 03 was interpreted as an octal literal
     it("DATE005: New Date(1991, 3, 3) object given as parameter", () => {
         expect(isDate(new Date(1991, 3, 3))).to.be.true
     });
 
-    // Same as above
     it("DATE006: New Date(1991, 3, 3, 1, 21, 0) object given as parameter", () => {
         expect(isDate(new Date(1991, 3, 3, 1, 21, 0))).to.be.true
     });
@@ -42,17 +40,14 @@ describe("Unit tests of isDate.js", () => {
         expect(isDate(12042021)).to.be.false
     }); 
 
-    // Result different than expected: Invalid Date is still a Date object
     it("DATE010: New invalid Date('Meerch 3, 1991 01:21:00') object is given as a parameter", () => {
         expect(isDate(new Date('Meerch 3, 1991 01:21:00'))).to.be.true
     }); 
 
-    // Same as above
     it("DATE011: New invalid Date(1991, 15, 13) object is given as a parameter", () => {
         expect(isDate(new Date(1991, 15, 13))).to.be.true
     }); 
 
-    // Returns false instead of exception
     it("DATE012: No parameter is given", () => {
         expect(isDate()).to.be.false
     }); 
@@ -61,7 +56,7 @@ describe("Unit tests of isDate.js", () => {
         expect(isDate(null)).to.be.false
     }); 
 
-    // New tests
+    // New tests:
     it("DATE014: Two parameters (new Date(), 123) given", () => {
         expect(isDate(new Date(), 123)).to.be.true
     });

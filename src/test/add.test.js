@@ -44,66 +44,50 @@ describe("Unit tests of add.js", () => {
         expect(add(-1.04,-2.11)).to.equal(-3.15)
     });
 
-    // Behaves differently than expected during planning (Infinity -> Number.MAX_VALUE)
-    // Number.MAX_VALUE is 1.7976931348623157e+308
     it("ADD011: Sum of maximum value of number and positive number", () => {
         expect(add(Number.MAX_VALUE,100)).to.equal(Number.MAX_VALUE)
     });
 
-    // Behaves differently than expected, values near MAX_VALUE are handles as MAX_VALUE
     it("ADD012: Sum of maximum value of number and negative number", () => {
         expect(add(Number.MAX_VALUE,-500)).to.equal(Number.MAX_VALUE)
     });
 
-    // Behaves differently than expected
     it("ADD013: Sum of negative maximum value of number and positive number", () => {
         expect(add(-Number.MAX_VALUE,100)).to.equal(-Number.MAX_VALUE)
     });
 
-    // Behaves differently than expected
     it("ADD014: Sum of negative maximum value of number and negative number", () => {
         expect(add(-Number.MAX_VALUE,-500)).to.equal(-Number.MAX_VALUE)
     });
 
-    // Behaves differently than expected: 0 is used as a base so giving only one parameter is ok
     it("ADD015: Only one parameter is given", () => {
         expect(add(500)).to.equal(500)
     });
 
-    // Behaves differently than expected: 0 is used as a base so giving no parameters is ok
     it("ADD016: Both parameters are missing", () => {
         expect(add()).to.equal(0)
     });
 
-    // Behaves differently than expected: 0 is used as a base so giving null as the second parameter is ok
     it("ADD017: Null given as second parameter", () => {
         expect(add(500,null)).to.equal(500)
     });
 
-    // Behaves differently than expected: 0 is used as a base so giving null as the first parameter is ok
     it("ADD018: Null given as first parameter", () => {
         expect(add(null,500)).to.equal(500)
     });
 
-    // Behaves differently than expected: 0 is used as a base so giving null as both parameters is ok
     it("ADD019: Null given as both parameters", () => {
         expect(add(null,null)).to.equal(0)
     });
 
-    // Renamed test
-    // Behaves differently than expected: if string is given as the first parameter, the operation is string catenation
     it("ADD020: String given as the first parameter", () => {
         expect(add("car",5)).to.equal("car5")
     });
 
-    // Renamed test
-    // Behaves differently than expected: if string is given as the second parameter, the operation is string catenation
     it("ADD021: String given as the second parameter", () => {
         expect(add(5,"car")).to.equal("5car")
     });    
 
-    // Renamed test
-    // Behaves differently than expected
     it("ADD022: String given as both parameters", () => {
         expect(add("summer","time")).to.equal("summertime")
     });    
@@ -117,12 +101,10 @@ describe("Unit tests of add.js", () => {
         expect(add(Number.MAX_VALUE,Number.MAX_VALUE)).to.equal(Number.POSITIVE_INFINITY)
     });
 
-    // MAX_SAFE_INTEGER is 9007199254740991
     it("ADD025: Sum of maximum safe integer and negative number", () => {
         expect(add(Number.MAX_SAFE_INTEGER, -1)).to.equal(9007199254740990)
     });
 
-    // MIN_SAFE_INTEGER is -9007199254740991
     it("ADD026: Sum of negative maximum safe integer and negative number", () => {
         expect(add(Number.MIN_SAFE_INTEGER, 1)).to.equal(-9007199254740990)
     });

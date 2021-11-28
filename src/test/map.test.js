@@ -14,12 +14,10 @@ describe("Unit tests of map.js", () => {
         expect(map([4,8], square)).to.deep.equal([16,64])
     });
 
-    // Behaves differently as expected: returns array of NaN 
     it("MAP002: An array containing non-number-values and square function given as parameters", () => {
         expect(map(['a', 'b', 'c'], square)).to.deep.equal([NaN, NaN, NaN])
     });
 
-    // Slight change to parameters (octal literal problem)
     it("MAP003: A Date array and isDate function given as parameters", () => {
         expect(map([new Date, new Date(1991, 3, 3)], isDate)).to.deep.equal([true, true])
     });
@@ -32,12 +30,10 @@ describe("Unit tests of map.js", () => {
         expect(map([12, 50, 101], toString)).to.deep.equal(['12', '50', '101'])
     });
 
-    // Behaves differently as expected: returns an empty array
     it("MAP006: No parameters are given", () => {
         expect(map()).to.deep.equal([])
     });
 
-    // Behaves differently as expected: splits string into characters (string is treated as a char array)
     it("MAP007: A string is given as the first parameter", () => {
         expect(map('testi', toString)).to.deep.equal(['t', 'e', 's', 't', 'i'])
     });
@@ -46,7 +42,6 @@ describe("Unit tests of map.js", () => {
         expect(function() { map([12, 50, 101], "toStringTesting"); }).to.throw(TypeError)
     });
 
-    // Behaves differently as expected, null gives an empty array
     it("MAP009: Null value is given as the first parameter", () => {
         expect(map(null, toString)).to.deep.equal([])
     });
@@ -67,8 +62,6 @@ describe("Unit tests of map.js", () => {
         expect(map([1], toString)).to.deep.equal(['1'])
     });
 
-    // Changed second argument from toString to square
-    // Reduced length of array to 1 000 000 to speed up test
     it("MAP014: A number array with 1000000 values given as the first parameter", () => {
         let bigArray = new Array(1000000)
         let bigArraySquared = new Array(1000000)
@@ -82,7 +75,7 @@ describe("Unit tests of map.js", () => {
         expect(map(bigArray, square)).to.deep.equal(bigArraySquared)
     });
 
-    // New tests
+    // New tests:
     it("MAP015: Only one parameter (a function) is given", () => {
         expect(function() { map(toString); }).to.throw(TypeError)
     });

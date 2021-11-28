@@ -8,7 +8,6 @@ describe("Unit tests of isObjectLike.js", () => {
         expect(isObjectLike({})).to.be.true
     });
 
-    // Parameters & description slightly modified
     it("IOL002: Dictionary with key-value pairs given as a parameter", () => {
         expect(isObjectLike({test1: 'abc', test2: 'def'})).to.be.true
     });
@@ -42,12 +41,11 @@ describe("Unit tests of isObjectLike.js", () => {
         expect(isObjectLike(new Date())).to.be.true
     });
 
-    // Returns false instead of exception
     it("IOL010: No parameter is given", () => {
         expect(isObjectLike()).to.be.false
     });    
 
-    // New tests
+    // New tests:
     it("IOL011: Anonymous function given as a parameter", () => {
         expect(isObjectLike(() => {console.log("Test function")})).to.be.false
     });

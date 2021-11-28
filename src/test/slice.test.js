@@ -40,34 +40,26 @@ describe("Unit tests of slice.js", () => {
         expect(slice([1, 2, 3, 4], 5)).to.deep.equal([])
     });
 
-    // Behaves differently than expected: undefined values are added to the end if end index is 
-    // greater than largest index
     it("SLI010: The end index is out of array's indexes", () => {
         expect(slice([1, 2, 3, 4], 1, 7)).to.deep.equal([2, 3, 4, undefined, undefined, undefined])
     });
 
-    // Behaves differently than expected: string is treated as a char array
-    // renamed
     it("SLI011: A string given as the first parameter", () => {
         expect(slice('NonArray', 1, 3)).to.deep.equal(['o', 'n'])
     });
 
-    // Behaves differently than expected: returns empty array
     it("SLI012: A non-number value given as the second parameter", () => {
         expect(slice([1, 2, 3, 4], 'one', 3)).to.deep.equal([])
     });
 
-    // Behaves differently than expected: returns empty array
     it("SLI013: A non-number value given as the third parameter", () => {
         expect(slice([1, 2, 3, 4], 1, 'three')).to.deep.equal([])
     });
 
-    // Behaves differently than expected: returns empty array
     it("SLI014: No parameters are given", () => {
         expect(slice()).to.deep.equal([])
     });
 
-    // Behaves differently than expected: returns empty array
     it("SLI015: Null value is given as the first parameter", () => {
         expect(slice(null, 1, 3)).to.deep.equal([])
     });
@@ -76,12 +68,11 @@ describe("Unit tests of slice.js", () => {
         expect(slice([1, 2, 3, 4], null, 3)).to.deep.equal([1, 2, 3])
     });
 
-    // Behaves differently than expected: returns empty array
     it("SLI017: Null value is given as the third parameter", () => {
         expect(slice([1, 2, 3, 4], 1, null)).to.deep.equal([])
     });
 
-    // New tests
+    // New tests:
     it("SLI018: A Date object given as the first parameter", () => {
         expect(slice(new Date, 1, 3)).to.deep.equal([])
     });    
