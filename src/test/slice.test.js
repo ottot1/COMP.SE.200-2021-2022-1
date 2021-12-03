@@ -41,7 +41,7 @@ describe("Unit tests of slice.js", () => {
     });
 
     it("SLI010: The end index is out of array's indexes", () => {
-        expect(slice([1, 2, 3, 4], 1, 7)).to.deep.equal([2, 3, 4, undefined, undefined, undefined])
+        expect(slice([1, 2, 3, 4], 1, 7)).to.deep.equal([2, 3, 4])
     });
 
     it("SLI011: A string given as the first parameter", () => {
@@ -74,7 +74,7 @@ describe("Unit tests of slice.js", () => {
 
     // New tests:
     it("SLI018: A Date object given as the first parameter", () => {
-        expect(slice(new Date, 1, 3)).to.deep.equal([])
+        expect(function() { slice(new Date, 1, 3); }).to.throw(TypeError)
     });    
 
     it("SLI019: Four parameters are given", () => {
