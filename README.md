@@ -23,5 +23,5 @@ Libraries used:
 Steps:
 * Make a local clone of this repository. 
 * Required libraries are installed with **npm install** command. 
-* The unit tests can be run with command **npm run test**.  
+* The unit tests can be run with command **npm test**.  
 * The coverage report can be generated with command **npm run coverage**.   

@@ -78,7 +78,7 @@ describe("Unit tests of slice.js", () => {
     });    
 
     it("SLI019: Four parameters are given", () => {
-        expect(slice([1, 2, 3, 4], 1, 3, 5)).to.deep.equal([2, 3])
+        expect(function() { slice([1, 2, 3, 4], 1, 3, 5); }).to.throw(Error);
     });
 
     it("SLI020: Three parameters are given: an array, start index (with negative offset larger than length) and end index", () => {

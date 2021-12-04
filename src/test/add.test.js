@@ -126,7 +126,7 @@ describe("Unit tests of add.js", () => {
     });
 
     it("ADD031: Three parameters given", () => {
-        expect(add(1,2,3)).to.equal(3)
+        expect(function() { add(1,2,3); }).to.throw(Error);
     });
 
     it("ADD032: Number array given as the first parameter", () => {

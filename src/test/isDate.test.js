@@ -58,11 +58,11 @@ describe("Unit tests of isDate.js", () => {
 
     // New tests:
     it("DATE014: Two parameters (new Date(), 123) given", () => {
-        expect(isDate(new Date(), 123)).to.be.true
+        expect(function() { isDate(new Date(), 123); }).to.throw(Error);
     });
 
     it("DATE015: Two parameters (123, new Date()) given", () => {
-        expect(isDate(123, new Date())).to.be.false
+        expect(function() { isDate(123, new Date()); }).to.throw(Error);
     });
 
     it("DATE016: A Date object array given as a parameter", () => {
