@@ -77,7 +77,7 @@ describe("Unit tests of slice.js", () => {
         expect(function() { slice(new Date, 1, 3); }).to.throw(TypeError)
     });    
 
-    it("SLI019: Four parameters are given", () => {
+    it("SLI019: Too many parameters are given", () => {
         expect(function() { slice([1, 2, 3, 4], 1, 3, 5); }).to.throw(Error);
     });
 

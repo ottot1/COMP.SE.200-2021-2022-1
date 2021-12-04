@@ -57,11 +57,11 @@ describe("Unit tests of isDate.js", () => {
     }); 
 
     // New tests:
-    it("DATE014: Two parameters (new Date(), 123) given", () => {
+    it("DATE014: Too many parameters (new Date(), 123) given", () => {
         expect(function() { isDate(new Date(), 123); }).to.throw(Error);
     });
 
-    it("DATE015: Two parameters (123, new Date()) given", () => {
+    it("DATE015: Too many parameters (123, new Date()) given", () => {
         expect(function() { isDate(123, new Date()); }).to.throw(Error);
     });
 
