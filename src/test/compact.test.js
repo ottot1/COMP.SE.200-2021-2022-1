@@ -42,5 +42,8 @@ describe("Unit tests of compact", () => {
     it("CO12: Parameters are missing", () => {
         expect(compact()).to.deep.equal([])
     });
+    it("CO013: Too many parameters given", () => {
+        expect(function() { compact([1,2,3, undefined], []); }).to.throw(Error);
+    });
 })
 

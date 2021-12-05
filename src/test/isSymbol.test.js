@@ -12,7 +12,7 @@ describe("Unit tests of isSymbol", () => {
         expect(isSymbol(Symbol('?'))).to.be.true
     });
     it("ISSY003: One parameter is given: a symbol & ",() => {
-        expect(isSymbol(Symbol('?'))).to.be.true
+        expect(isSymbol(Symbol('&'))).to.be.true
     });
     it("ISSY004: One parameter is given: a symbol @",() => {
         expect(isSymbol(Symbol('@'))).to.be.true
@@ -40,5 +40,8 @@ describe("Unit tests of isSymbol", () => {
     });
     it("ISSY0012: Parameter is missing", () => {
         expect(isSymbol()).to.be.false
+    });
+    it("ISSY0013: Too many parameters given", () => {
+        expect(function() { isSymbol('!','%'); }).to.throw(Error);
     });
 })

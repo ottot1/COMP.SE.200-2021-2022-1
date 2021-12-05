@@ -41,6 +41,9 @@ describe("Unit tests of ceil", () => {
     it("CEI0012: Parameters are missing", () => {
         expect(ceil()).to.deep.equal(NaN)
     });
+    it("CEI0013: Too many parameters given", () => {
+        expect(function() { ceil(10.052,2,2); }).to.throw(Error);
+    });
 
 })
 
