@@ -84,7 +84,7 @@ describe("Unit tests of map.js", () => {
         expect(map(new Date, square)).to.deep.equal([undefined])
     });
 
-    it("MAP017: A third parameter is given", () => {
-        expect(map([4,8], square, square)).to.deep.equal([16,64])
+    it("MAP017: Too many parameters are given", () => {
+        expect(function() { map([4,8], square, square); }).to.throw(Error);
     });
 })

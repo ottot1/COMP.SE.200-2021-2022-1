@@ -50,11 +50,11 @@ describe("Unit tests of isObjectLike.js", () => {
         expect(isObjectLike(() => {console.log("Test function")})).to.be.false
     });
 
-    it("IOL012: Two parameters ([1,2,3], 'car') are given", () => {
-        expect(isObjectLike([1,2,3], 'car')).to.be.true
+    it("IOL012: Too many parameters ([1,2,3], 'car') are given", () => {
+        expect(function() { isObjectLike([1,2,3], 'car'); }).to.throw(Error);
     });
 
-    it("IOL013: Two parameters ('car', [1,2,3]) are given", () => {
-        expect(isObjectLike('car', [1,2,3])).to.be.false
+    it("IOL013: Too many parameters ('car', [1,2,3]) are given", () => {
+        expect(function() { isObjectLike('car', [1,2,3]); }).to.throw(Error);
     }); 
 })

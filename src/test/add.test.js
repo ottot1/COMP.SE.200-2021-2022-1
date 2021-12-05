@@ -125,8 +125,8 @@ describe("Unit tests of add.js", () => {
         expect(add(-5000, Number.NaN)).to.be.NaN
     });
 
-    it("ADD031: Three parameters given", () => {
-        expect(add(1,2,3)).to.equal(3)
+    it("ADD031: Too many parameters given", () => {
+        expect(function() { add(1,2,3); }).to.throw(Error);
     });
 
     it("ADD032: Number array given as the first parameter", () => {
