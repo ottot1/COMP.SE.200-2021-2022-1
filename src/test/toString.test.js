@@ -23,7 +23,7 @@ describe("Unit tests of toString", () => {
     it("TS006: One parameter is given: a symbol", () => {
         expect(toString('@')).to.deep.equal('@')
     });
-    it("TS007: One parameter is given: an array: a number, a sumbol and a letter", () => {
+    it("TS007: One parameter is given: an array: a number, a symbol and a letter", () => {
         expect(toString([1, '@', 'a'])).to.deep.equal('1,@,a')
     });
     it("TS008: One parameter is given: null", () => {
